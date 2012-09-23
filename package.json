@@ -1,0 +1,8 @@
+{
+   "name" : "mypackage",
+   "version" : "0.7.0",
+   "main" : "./lib/main",
+   "devDependencies": {
+     "docco"    :  ">= 0.4.0"
+   }
+}
