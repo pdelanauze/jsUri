@@ -8,6 +8,17 @@
 // Usage
 // -----
 
+// [Download](https://raw.github.com/derek-watson/jsUri/master/Uri.min.js) and use in the browser:
+//
+// `<script src="Uri.min.js"></script>`
+//
+// or use the node module:
+//
+// `npm install Uri`
+//
+// `var Uri = require('Uri');`
+
+// ## Constructor
 // Pass anything that a browser would recognize as a url to the new Uri() constructor.
 // Use the accessor methods to get at the various parts.
 
@@ -33,6 +44,7 @@ new Uri('github.com').host('www.github.com');   // https://www.github.com
 
 // The fluent interface provides a simple way to chain property assignment
 
+// _https://username:password@www.test.com:8080/index.html?this=that&some=thing#content_
 new Uri()
     .setPath('/index.html')
     .setAnchor('content')
@@ -40,15 +52,17 @@ new Uri()
     .setPort(8080)
     .setUserInfo('username:password')
     .setProtocol('https')
-    .setQuery('this=that&some=thing')      // https://username:password@www.test.com:8080/index.html?this=that&some=thing#content
+    .setQuery('this=that&some=thing');
 
+// _https://www.yahoo.com_
 new Uri('http://www.test.com')
     .setHost('www.yahoo.com')
-    .setProtocol('https')                  // https://www.yahoo.com
+    .setProtocol('https');
 
+// _/archives/1979?page=1_
 new Uri()
     .setPath('/archives/1979/')
-    .setQuery('?page=1')                   // /archives/1979?page=1
+    .setQuery('?page=1');
 
 // Query Parameter Access and Manipulation
 // ---------------------------------------

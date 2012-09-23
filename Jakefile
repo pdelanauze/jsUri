@@ -4,6 +4,6 @@ task('default', ['build']);
 desc('Build via docco');
 task('build', function () {
     var command = './node_modules/.bin/docco -o . index.js -t index.jst';
-    console.log(command);
+    console.log('Building index.html via docco')
     jake.exec(command);
 });
