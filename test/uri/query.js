@@ -37,6 +37,11 @@ describe('Uri', function() {
         q = new Uri('?11=eleven&12=&13&14=fourteen')
         expect(q.toString()).to.equal('?11=eleven&12=&13&14=fourteen')
       })
+
+      it('should correctly parse the host if an @ sign is present after the host part of the url', function(){
+        q = new Uri('http://github.com/@username');
+        expect(q.host()).to.equal('github.com');
+      });
     })
 
     describe('manipulation', function() {
